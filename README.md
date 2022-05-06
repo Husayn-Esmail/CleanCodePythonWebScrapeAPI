@@ -10,7 +10,9 @@ This API is written in python and has been written by Husayn Esmail. I also
 decided to use sqlite because while it would be better to use postgres for
 production, I did not intend to use it for production. In any case, switching
 to postgres should be relatively easy if that is desired. I opted against using
-a file to store data because files get messy.
+a file to store data because files get messy. I recommend deleting the current 
+database file so that none of the existing entries conflict with what is being
+tested.
 
 The due date for this project is May 11, 2022. 
 
