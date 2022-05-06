@@ -1,0 +1,17 @@
+# required for fastapi to run
+fastapi
+uvicorn
+# adds types to python and is necessary for models
+pydantic
+# necessary for html forms
+python-multipart
+# used for templates
+jinja2
+# used for database
+sqlalchemy
+# used for web requests
+requests
+
+# handle javascript
+selenium
+chromedriver_py

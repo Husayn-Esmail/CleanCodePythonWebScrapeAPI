@@ -1,0 +1,18 @@
+/* The sole purpose of these styles is to center the form.  */
+h1 {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.row {
+    text-align: center;
+}
+
+.button {
+    margin: 10px;
+    text-align: center;
+}
+
+p  {
+    text-align: center;
+}
