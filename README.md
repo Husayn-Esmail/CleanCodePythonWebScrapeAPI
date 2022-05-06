@@ -20,7 +20,7 @@ LIMITATIONS:
 The limitations of this project is that it cannot reach into iframes. Nor can it
 deal with authentication and complexities like that.
 
-[ATTENTION]:
+### [ATTENTION]:
 This API can somewhat handle javascript heavy pages as well as infinite scroll
 pages but it has not been tested entirely. If you would like to use this feature,
 uncomment the specified line in search.py. By default it will not handle such
@@ -39,24 +39,22 @@ installed the required dependencies, but since the virtual environment has been
 uploaded as well, the dependencies should come with it. 
 
 
-Check requirements.txt for the necessary libraries to run this API.
-To install packages from requirements.txt run the following command
+Check requirements.txt for the necessary libraries to run this API. <br>
+To install packages from requirements.txt run the following command:
 pip3 install -r requirements.txt
 
-A few other things to note:
-ignore scrape.py, I wanted to track it's history but it was really just for testing
-the scraping functionality in isolation. Also ignore crud.py, it is not being used
-and was a part of a previous attempt.
 
-Explanation of other files:
-database.py holds the code which runs the database
-main.py houses all the main functionality including the app and endpoints
-models.py holds python representations of the table in the database
-schemas.py holds the code that validates type before information is entered to database
-services.py is the gateway between main.py and the database
-tagselect.db is the database
-templates is a folder holding the html for the api endpoints
-form.html the code for the api interface 
-landing.html is the code for the root path
-static holds css files
-stylesheet.css has styles for form.html
+Explanation of files:
+- sql holds all database related files (except the database and main interface)
+- database.py holds the code which runs the database
+- main.py houses all the main functionality including the app and endpoints
+- models.py holds python representations of the table in the database
+- schemas.py holds the code that validates type before information is entered to database
+- crud.py holds read and write functions for the database
+- services.py is the gateway between main.py and the database
+- tagselect.db is the database
+- templates is a folder holding the html for the api endpoints
+- form.html the code for the api interface 
+- static holds css files
+- stylesheet.css has styles for form.html
+- search.py holds functions for searching the given webpage
