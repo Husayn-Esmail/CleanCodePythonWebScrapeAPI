@@ -48,7 +48,7 @@ def form_post(
         # complete the query structure with the element
         query.element = search.get_result(query.link, query.qstring)
         # add query to the database
-        print("called")
+        print("called") # proves scraping
         crud.create_query(db=db, query=query)
     else: # this only needs to be performed if db_entries is not empty
         count = 0
@@ -56,14 +56,14 @@ def form_post(
         for entry in db_entries:
             # all entries in db_entries will match link, just check for qstring
             if (entry.qstring.lower() == query.qstring):
-                print("read")
+                print("read") # proves reading from db instead of scraping again
                 query.element = entry.element
                 break
             count += 1
         # If the whole list was traversed without a match, add query to database
         if (count == len(db_entries)):
             query.element = search.get_result(query.link, query.qstring)
-            print("called2")
+            print("called2") # proves scraping when qstring not in database is queried
             crud.create_query(db=db, query=query)
     # returns user back to the form with new found element only, nothing else.
     return templates.TemplateResponse("form.html", context={'request': request, "result": query.element})

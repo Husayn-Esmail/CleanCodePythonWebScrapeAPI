@@ -15,10 +15,15 @@ a file to store data because files get messy.
 The due date for this project is May 11, 2022. 
 
 LIMITATIONS:
-The limitations of this project is that it cannot handle infinite scrolling
-websites, and it cannot reach into iframes. As of May 6, 2022 it also can't
-deal with javascript intensive websites, but I'm working on that and hopefully
-it will be completed by the due date.
+The limitations of this project is that it cannot reach into iframes. Nor can it
+deal with authentication and complexities like that.
+
+[ATTENTION]:
+This API can somewhat handle javascript heavy pages as well as infinite scroll
+pages but it has not been tested entirely. If you would like to use this feature,
+uncomment the specified line in search.py. By default it will not handle such
+tasks because I thought it was outside the scope of this project and things get
+quite a bit more complex and slower when selenium is introduced.
 
 To start the virtual environment:
 source pyapi/bin/activate

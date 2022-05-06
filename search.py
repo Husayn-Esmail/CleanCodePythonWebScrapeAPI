@@ -1,4 +1,30 @@
 import requests as _requests
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from chromedriver_py import binary_path
+
+def get_html_string(link):
+    """
+    Uses Selenium to simulate a browser and return the complete html string
+    from a website. Note that the functionality has only been tested briefly and
+    that the result will contain utf-8 characters. This function will not be
+    actively used unless you decide to uncomment the alternative html_string
+    variable below. If you go this route, ensure to comment the other html_string.
+    Returns a string of the html code.
+    """
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+    s = Service(binary_path)
+    driver = webdriver.Chrome(service=s,options=chrome_options)
+    driver.get(link)
+    page = driver.page_source.encode("utf-8")
+    # page = page.decode("utf-8")
+    # page = page.encode("ascii","ignore")
+    page = str(page) # done separately to make it easier when testing
+    driver.quit()
+    return page
 
 def find_element(link, string):
     """
@@ -10,6 +36,7 @@ def find_element(link, string):
     Returns the element (string).
     """
     html_string = _requests.get(link).text
+    # html_string = get_html_string(link) # uncomment this line to handle js heavy pages
     # find last occurrence of string (returns index of first character)
     result_index = html_string.lower().rfind(string)
     # starting/ending character indexes

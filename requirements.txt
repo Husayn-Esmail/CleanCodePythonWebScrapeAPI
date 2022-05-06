@@ -14,4 +14,4 @@ requests
 
 # handle javascript
 selenium
-chromedriver_py
+chromedriver_py==101.0.4951.41
