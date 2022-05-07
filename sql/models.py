@@ -1,4 +1,3 @@
-from email.mime import base
 import sqlalchemy as _sql
 from . import database
 

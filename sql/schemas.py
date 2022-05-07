@@ -51,4 +51,8 @@ class Query(QueryBase):
             element = element
         )
 
+class Q2(QueryBase):
+    link: str
+    qstring: str
+    element: _typing.Optional[str] = None
 
