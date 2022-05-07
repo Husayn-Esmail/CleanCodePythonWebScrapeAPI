@@ -5,20 +5,31 @@
     <!-- compliant with fastapi static files -->
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
   </head>
+  <!-- <script>
+    function validateForm(){
+      let x = document.forms["getInput"]["link"].value;
+      let y = document.forms["getInput"]["qstring"].value;
+      if (x == "" || y =="") {
+        alert("All fields must be filled out!");
+        return false;
+      }
+    }
+  </script> -->
   <body>
     <div>
       <h1>Search for an HTML tag in a website</h1>
-      <form class="input" method="POST">
+      <!-- add onsubmit="return validateForm()" if you uncomment the script above. -->
+      <form name="getInput" class="input" method="POST">
         <div class="row">
           <div>
             <!-- URL input -->
             <label for="link">Webpage URL:</label>
-            <input type="url" name="link" placeholder="Enter URL">
+            <input type="url" name="link" placeholder="Enter URL" required>
           </div>
           <div>
             <!-- search string input -->
             <label for="qstring">Search String:</label>
-            <input type="text" name="qstring" placeholder="Enter Search String">
+            <input type="text" name="qstring" placeholder="Enter Search String" required>
           </div>
         </div>
         <!-- submit button -->
