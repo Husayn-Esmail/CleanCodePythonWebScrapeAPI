@@ -14,6 +14,9 @@ a file to store data because files get messy. I recommend deleting the current
 database file so that none of the existing entries conflict with what is being
 tested.
 
+The endpoint for this is http://localhost:8080/form, the port can be changed in
+start.sh by changing the port environment variable.
+
 The due date for this project is May 11, 2022. 
 
 LIMITATIONS:
@@ -33,7 +36,7 @@ source pyapi/bin/activate
 To leave the virtual environment: 
 deactivate
 
-Once you've entered the virtual environment, you can start the API with start.sh. 
+Once you've entered the virtual environment, you can start the API with start.sh. <br>
 NOTE: If running outside the virtual environment, this will only work if you've 
 installed the required dependencies, but since the virtual environment has been 
 uploaded as well, the dependencies should come with it. 
