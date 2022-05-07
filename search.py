@@ -1,3 +1,4 @@
+import fastapi as _fastapi
 import requests as _requests
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -18,7 +19,10 @@ def get_html_string(link):
     chrome_options.add_argument("--disable-gpu")
     s = Service(binary_path)
     driver = webdriver.Chrome(service=s,options=chrome_options)
-    driver.get(link)
+    try:
+        driver.get(link)
+    except:
+        raise _fastapi.HTTPException(status_code=400, detail="The url you entered is not valid")
     page = driver.page_source.encode("utf-8")
     # page = page.decode("utf-8")
     # page = page.encode("ascii","ignore")
@@ -35,7 +39,10 @@ def find_element(link, string):
     forwards until the whole element is found. 
     Returns the element (string).
     """
-    html_string = _requests.get(link).text
+    try:
+        html_string = _requests.get(link).text
+    except: 
+        raise _fastapi.HTTPException(status_code=400, detail="The url you entered is not valid")
     # html_string = get_html_string(link) # uncomment this line to handle js heavy pages
     # find last occurrence of string (returns index of first character)
     result_index = html_string.lower().rfind(string)

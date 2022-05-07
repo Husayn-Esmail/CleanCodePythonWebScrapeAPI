@@ -1,3 +1,4 @@
+
 import fastapi as _fastapi
 import fastapi.responses as _responses
 import fastapi.staticfiles as _static
@@ -25,6 +26,7 @@ def form_post(request: _fastapi.Request):
     # return the form
     return templates.TemplateResponse("form.html", context={"request": request})
 
+
 # endpoint to accept input from the form
 @app.post("/form", response_model=schemas.Query)
 def form_post(
@@ -40,6 +42,8 @@ def form_post(
     # set user input to lowercase to maintain case insensitive
     query.link = query.link.lower()
     query.qstring = query.qstring.lower()
+
+    
     # query the database for all existing entries that match the specified link
     db_entries = crud.get_queries_by_link(db=db, link=query.link)
 
