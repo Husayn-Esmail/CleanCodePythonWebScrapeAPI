@@ -2,6 +2,8 @@ import pydantic as _pydantic
 import fastapi as _fastapi
 import typing as _typing
 
+# most of this code was obtained from fastapi tutorial documentation and
+# restructured to suit my needs.
 class QueryBase(_pydantic.BaseModel):
     """
     This is a base model for the Query class. All Query subclasses
@@ -32,6 +34,12 @@ class Query(QueryBase):
     populated after actions have been performed on link and qstring. 
     There is a class method to make it compliant with html forms as they
     have different data output which is not equivalent to json. 
+    HTML input names and attribute names in here must be consistent for the
+    form to work. Note the class method code is not necessarily mine, it uses 
+    my variable names but it's from a stack overflow post which I read but 
+    didn't manage to get working without this video. He also mentions the stack
+    overflow post.
+    video link: https://www.youtube.com/watch?v=L4WBFRQB7Lk
     """
     link: str
     qstring: str

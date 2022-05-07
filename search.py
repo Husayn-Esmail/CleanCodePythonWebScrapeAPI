@@ -1,5 +1,6 @@
 import fastapi as _fastapi
 import requests as _requests
+# next 4 imports are all for selenium
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -12,7 +13,9 @@ def get_html_string(link):
     that the result will contain utf-8 characters. This function will not be
     actively used unless you decide to uncomment the alternative html_string
     variable below. If you go this route, ensure to comment the other html_string.
-    Returns a string of the html code.
+    Returns a string of the html code. I found this method of scraping on stack
+    overflow, I do not know the exact link because I accidentally googled it in a
+    private tab.
     """
     chrome_options = Options()
     chrome_options.add_argument("--headless")

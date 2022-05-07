@@ -8,6 +8,7 @@ import search
 def create_database():
     """
     Creates the database based on the Base variable in database.
+    Obtained from fastapi tutorial documentaion.
     """
     return database.Base.metadata.create_all(bind=database.engine)
 
@@ -16,6 +17,7 @@ def get_db():
     """
     Creates database session and attempts to access database.
     Always closes the database when finished.
+    Obtained from fastapi tutorial documentation
     """
     # create session
     db = database.SessionLocal()
