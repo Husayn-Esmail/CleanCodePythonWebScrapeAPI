@@ -6,20 +6,22 @@ value rather than re-scraping the website. If the web page has more than one
 matching element, then the last element should be returned from the API.
 
 I have decided to use fastapi because I think it will be faster than django
-This API is written in python and has been written by Husayn Esmail. I also 
-decided to use sqlite because while it would be better to use postgres for
-production, I did not intend to use it for production. In any case, switching
-to postgres should be relatively easy if that is desired. I opted against using
-a file to store data because files get messy. I recommend deleting the current 
-database file so that none of the existing entries conflict with what is being
-tested.
+This API is written in python and has been written by Husayn Esmail. I of course
+got help from stackoverflow and youtube as well as the fastapi tutorial. I will
+leave links where I can about where I got the code from/what resources I used. 
+I also decided to use sqlite because while it would be better to use postgres 
+for production, I did not intend to use it for production. In any case, 
+switching to postgres should be relatively easy if that is desired. I opted 
+against using a file to store data because files get messy. I recommend 
+deleting the current database file so that none of the existing entries conflict 
+with what is being tested.
 
 The endpoint for this is http://localhost:8080/form, the port can be changed in
 start.sh by changing the port environment variable.
 
 The due date for this project is May 11, 2022. 
 
-LIMITATIONS:
+### [LIMITATIONS]:
 The limitations of this project is that it cannot reach into iframes. Nor can it
 deal with authentication and complexities like that.
 
@@ -37,13 +39,14 @@ To leave the virtual environment:
 deactivate
 
 Once you've entered the virtual environment, you can start the API with start.sh. <br>
-NOTE: If running outside the virtual environment, this will only work if you've 
+#### NOTE: 
+If running outside the virtual environment, this will only work if you've 
 installed the required dependencies, but since the virtual environment has been 
 uploaded as well, the dependencies should come with it. 
 
 
 Check requirements.txt for the necessary libraries to run this API. <br>
-To install packages from requirements.txt run the following command:
+To install packages from requirements.txt run the following command:<br>
 pip3 install -r requirements.txt
 
 
