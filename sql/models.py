@@ -1,6 +1,9 @@
 import sqlalchemy as _sql
 from . import database
 
+# most of this code was obtained from fastapi tutorial documentation and
+# restructured to suit my needs.
+
 # python representation of database table
 class Query(database.Base):
     """

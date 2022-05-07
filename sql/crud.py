@@ -1,6 +1,9 @@
 import sqlalchemy.orm as _orm
 from . import models, schemas
 
+# most of this code was obtained from fastapi tutorial documentation and
+# restructured to suit my needs.
+
 # get all queries that match the link provided
 def get_queries_by_link(db: _orm.Session, link: str):
     """
