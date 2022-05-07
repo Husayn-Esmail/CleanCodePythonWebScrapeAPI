@@ -59,12 +59,6 @@ def get_element(
     query.qstring = query.qstring.lower()
     # main functionality, read docstring in services.py for more information
     services.work_with_db(db=db, query=query)
-    # return input and output
-    # return {
-    #     "url": query.link, 
-    #     "search string": query.qstring,
-    #     "html element": query.element
-    # }
     return query
 
 @app.get("/api/{link:path}", response_model=schemas.Query)
@@ -72,7 +66,9 @@ def show_element(
     query: schemas.Query = _fastapi.Depends(),
     db: _orm.Session = _fastapi.Depends(services.get_db)
 ):
+    # set input to lowercase to maintain case insensitive
     query.link = query.link.lower()
     query.qstring = query.qstring.lower()
+    # main functionality, read docstring in services.py for more information
     services.work_with_db(db=db, query=query)
     return query
