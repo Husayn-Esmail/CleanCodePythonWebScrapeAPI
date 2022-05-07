@@ -5,8 +5,7 @@ import fastapi.staticfiles as _static
 import fastapi.templating as _template
 import sqlalchemy.orm as _orm
 import sql.schemas as schemas
-import sql.crud as crud
-import search, services
+import services
 
 # init fastapi
 app = _fastapi.FastAPI()
