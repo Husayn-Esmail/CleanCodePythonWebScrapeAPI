@@ -42,8 +42,8 @@ def form_post(
     query.link = query.link.lower()
     query.qstring = query.qstring.lower()
 
-    services.work_with_db(db=db, query=query)
     # main functionality, read docstring in services.py for more information
+    services.work_with_db(db=db, query=query)
     # returns user back to the form with new found element only, nothing else.
     return templates.TemplateResponse("form.html", context={'request': request, "result": query.element})
 
