@@ -7,11 +7,10 @@ matching element, then the last element should be returned from the API.
 
 I have decided to use fastapi because I think it will be faster than django
 This API is written in python and has been written by Husayn Esmail. I of course
-got help from stackoverflow and youtube as well as the fastapi tutorial. I will
+got help from stack overflow and youtube as well as the fastapi tutorial. I will
 leave links where I can about where I got the code from/what resources I used. 
-I also decided to use sqlite because while it would be better to use postgres 
-for production, I did not intend to use it for production. In any case, 
-switching to postgres should be relatively easy if that is desired. I opted 
+I also decided to use sqlite instead of sqlite because this is a small API, although, 
+switching to postgres would be relatively easy if that is desired. I opted 
 against using a file to store data because files get messy. I recommend 
 deleting the current database file so that none of the existing entries conflict 
 with what is being tested.
@@ -33,7 +32,7 @@ tasks because I thought it was outside the scope of this project and things get
 quite a bit more complex and slower when selenium is introduced.
 
 To start the virtual environment:
-source pyapi/bin/activate
+source HTML_ELEMENT_API_ENV/bin/activate
 
 To leave the virtual environment: 
 deactivate
