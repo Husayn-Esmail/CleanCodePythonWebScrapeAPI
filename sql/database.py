@@ -9,7 +9,7 @@ import sqlalchemy.orm as _orm
 SQLALCHEMY_DATABASE_URL = "sqlite:///./queries.db"
 
 # create database engine
-engine = _sql.create_engine (
+engine = _sql.create_engine(
     # setup for sqlite
     SQLALCHEMY_DATABASE_URL, connect_args = {"check_same_thread": False}
 )
