@@ -1,1 +1,4 @@
 queries.db
+HTML_ELEMENT_API_ENV/
+pyapi_env/
+__pycache__/
