@@ -4,7 +4,7 @@ import fastapi.responses as _responses
 import fastapi.staticfiles as _static
 import fastapi.templating as _template
 import sqlalchemy.orm as _orm
-import sql.schemas as schemas
+from sql import schemas
 import services
 
 # init fastapi

@@ -24,7 +24,7 @@ def get_html_string(link):
     driver = webdriver.Chrome(service=s,options=chrome_options)
     try:
         driver.get(link)
-    except:
+    except Exception:
         raise _fastapi.HTTPException(status_code=400, detail="The url you entered is not valid")
     page = driver.page_source.encode("utf-8")
     # page = page.decode("utf-8")
@@ -44,7 +44,7 @@ def find_element(link, string):
     """
     try:
         html_string = _requests.get(link).text
-    except: 
+    except Exception: 
         raise _fastapi.HTTPException(status_code=400, detail="The url you entered is not valid")
     # html_string = get_html_string(link) # uncomment this line to handle js heavy pages
     # find last occurrence of string (returns index of first character)

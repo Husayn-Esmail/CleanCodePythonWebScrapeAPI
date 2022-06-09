@@ -1,8 +1,6 @@
 import sqlalchemy.orm as _orm
 # all my modules are imported without protection
-import sql.database as database
-import sql.schemas as schemas
-import sql.crud as crud
+from sql import database, schemas, crud
 import search
 # create database
 def create_database():
