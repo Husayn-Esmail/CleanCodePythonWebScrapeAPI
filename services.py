@@ -36,24 +36,24 @@ def work_with_db(db: _orm.Session, query: schemas.Query):
     db_entries = crud.get_queries_by_link(db=db, link=query.link)
 
     # If no entries were found that match the link
-    if (db_entries == []):
+    if db_entries == []:
         # complete the query structure with the element
         query.element = search.get_result(query.link, query.qstring)
         # add query to the database
         print("called") # proves scraping
         crud.create_query(db=db, query=query)
-    else: # this only needs to be performed if db_entries is not empty
+    else:  # this only needs to be performed if db_entries is not empty
         count = 0
         # db_entries is not empty and there could be multiple entries
         for entry in db_entries:
             # all entries in db_entries will match link, just check for qstring
-            if (entry.qstring.lower() == query.qstring):
+            if entry.qstring.lower() == query.qstring:
                 print("read") # proves reading from db instead of scraping again
                 query.element = entry.element
                 break
             count += 1
         # If the whole list was traversed without a match, add query to database
-        if (count == len(db_entries)):
+        if count == len(db_entries):
             query.element = search.get_result(query.link, query.qstring)
-            print("called2") # proves scraping when qstring not in database is queried
+            print("called2")  # proves scraping when qstring not in database is queried
             crud.create_query(db=db, query=query)

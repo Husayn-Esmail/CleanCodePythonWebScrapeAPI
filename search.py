@@ -20,8 +20,8 @@ def get_html_string(link):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
-    s = Service(binary_path)
-    driver = webdriver.Chrome(service=s,options=chrome_options)
+    my_service = Service(binary_path)
+    driver = webdriver.Chrome(service=my_service, options=chrome_options)
     try:
         driver.get(link)
     except Exception:
@@ -39,12 +39,12 @@ def find_element(link, string):
     the url used to search the string against. A get request is performed on the
     link which is converted to lowercase text. Then rfind is performed to find
     the last occurrance of the desired string. A loop works both backwards and
-    forwards until the whole element is found. 
+    forwards until the whole element is found.
     Returns the element (string).
     """
     try:
         html_string = _requests.get(link).text
-    except Exception: 
+    except Exception:
         raise _fastapi.HTTPException(status_code=400, detail="The url you entered is not valid")
     # html_string = get_html_string(link) # uncomment this line to handle js heavy pages
     # find last occurrence of string (returns index of first character)
@@ -57,11 +57,11 @@ def find_element(link, string):
     end = html_string[end_index]
 
     # get full element
-    while (start != "<"): # find index of the opening tag
+    while start != "<": # find index of the opening tag
         start_index -= 1
         start = html_string[start_index]
 
-    while (end != ">"): # find index of closing tag
+    while end != ">": # find index of closing tag
         end_index += 1
         end = html_string[end_index]
 
