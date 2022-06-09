@@ -19,7 +19,7 @@ services.create_database()
 
 # endpoint to serve the form (interface)
 @app.get("/form", response_class=_responses.HTMLResponse)
-def form_post(request: _fastapi.Request):
+def form_get(request: _fastapi.Request):
     """
     Handles get requests to the endpoint so user can submit a post request.
     """
